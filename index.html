@@ -1,69 +1,908 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SpeeLead風 LP</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="header">
-    <img src="assets/logo.png" alt="Logo" class="logo">
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">サービス</a></li>
-        <li><a href="#features">特徴</a></li>
-        <li><a href="#contact">お問い合わせ</a></li>
+  <head>
+    <title>Emobi沖縄 ｜沖縄観光</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="沖縄の電動トゥクトゥクレンタル「えもび鎌倉」超簡単・気軽に乗れる電動トゥクトゥク。失敗しない沖縄観光。小さな車両で沖縄を自由に移動。">
+    <meta name="format-detection" content="telephone=no"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Domine:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./js/splide/splide.min.css">
+<link rel="shortcut icon" href="images/favicon.ico" >
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <meta property="og:title" content="Emobi沖縄 ｜沖縄観光">
+    <meta property="og:description" content="鎌倉の電動トゥクトゥクレンタル「えもび沖縄」超簡単・気軽に乗れる電動トゥクトゥク。失敗しない沖縄観光。小さな車両で沖縄を自由に移動。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Emobi沖縄 ｜沖縄観光">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Emobi沖縄 ｜沖縄観光">
+    <meta name="twitter:description" content="沖縄の電動トゥクトゥクレンタル「えもび沖縄」超簡単・気軽に乗れる電動トゥクトゥク。失敗しない沖縄観光。小さな車両で沖縄を自由に移動。">
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+      <symbol id="arrow" viewBox="0 0 14.097 14.096">
+        <path d="M7.048,0,5.78,1.267l4.884,4.884H0V7.944H10.664L5.78,12.828,7.048,14.1,14.1,7.048Z" transform="translate(0 0.001)"/>
+      </symbol>
+      <symbol id="arrow2" viewBox="0 0 16.432 34.037">
+        <path d="M17.019,0,34.037,16.432H0Z" transform="translate(16.432) rotate(90)" fill="#ccc"/>
+      </symbol>
+    </svg>
+    <header class="header" x-data="{isopen : false, count:0}">
+      <div class="header__inner" :class="isopen ? 'is-active':''" id="js-header">
+        <div class="header__logo"> <img src="./images/logo.svg" alt="emobi"></div>
+        <div class="header__button" x-on:click="isopen = !isopen">menu </div>
+      </div>
+      <div class="header__drawer" :class="isopen ? 'is-active':''"> 
+        <div class="header__drawer-close" x-on:click="isopen = !isopen"></div>
+        <div class="header__drawer-content">
+          <div class="header__drawer-button" x-on:click="isopen = !isopen"> <span>close </span></div>
+          <div class="header__drawer-links-wrap">
+            <div class="header__drawer-links"><a class="header__drawer-link" href="#model-course" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">Model COURSE</div>
+                <div class="header__drawer-link-subtitle">テーマ別モデルコース</div></a><a class="header__drawer-link" href="#movie" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">MOVIE</div>
+                <div class="header__drawer-link-subtitle">実際のご利用動画</div></a><a class="header__drawer-link" href="#merit" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">Merit</div>
+                <div class="header__drawer-link-subtitle">トゥクトゥクで巡るメリット</div></a><a class="header__drawer-link" href="#user-voice" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">User’s Voice</div>
+                <div class="header__drawer-link-subtitle">お客様の声</div></a><a class="header__drawer-link" href="#media" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">Media</div>
+                <div class="header__drawer-link-subtitle">メディア掲載情報</div></a><a class="header__drawer-link" href="#faq" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">FAQ</div>
+                <div class="header__drawer-link-subtitle">よくあるご質問</div></a><a class="header__drawer-link" href="#access" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">ACCESS</div>
+                <div class="header__drawer-link-subtitle">アクセス</div></a><a class="header__drawer-link" href="#price" x-on:click="isopen = !isopen">
+                <div class="header__drawer-link-title">Price</div>
+                <div class="header__drawer-link-subtitle">サービス料金</div></a></div>
+            <div class="footer__sns">
+              <div class="footer__sns-title">Follow us on</div>
+              <div class="footer__sns-lists"><a class="footer__sns-list" href="https://www.instagram.com/emobi_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="./images/instagram.svg" alt="instagram"></a><a class="footer__sns-list" href="#" target="_blank"><img src="./images/x.svg" alt="x"></a><a class="footer__sns-list" href="https://www.tiktok.com/@emobi_official?_t=8pNLFsjvPbl&_r=1" target="_blank"><img src="./images/ticktok.svg" alt="ticktok"></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header><svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="plus" viewBox="0 0 40 40" fill="none">
+<path d="M13 20H27" stroke="#2C2C2C" stroke-width="1.5"/>
+<path d="M20 13L20 27" stroke="#2C2C2C" stroke-width="1.5"/>
+</symbol>
+<symbol id="chevron1" viewBox="0 0 40 41" fill="none">
+<path d="M17.4886 26.2669L23.5496 20.2197L17.4886 14.1726" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="chevron-bottom" viewBox="0 0 40 40" fill="none">
+<path d="M13.9405 17.4901L20.0029 23.5515L26.0654 17.4901" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round"/>
+</symbol>    
+<symbol id="triangle-down" viewBox="0 0 32 32" fill="none">
+<path d="M16.3327 23.334L24.666 10.0007L7.99935 10.0006L16.3327 23.334Z" fill="#2C2C2C"/>
+</symbol>
+</svg><a class="float-btn" href="https://www.e-sharedbox.jp/emobi/_2keyresv.php?ro=52" target="_blank"> <img src="./images/float-btn.svg" alt="予約する"></a>
+    <div class="hero" id="js-first-view">
+      <div class="hero__inner"> 
+        <h1>
+          <picture>
+            <source srcset="./images/kv-sp.jpg" media="(max-width: 768px)"/><img src="./images/kv-pc.jpg" alt="電動トゥクトゥクで巡る!おすすめ江ノ島スポット"/>
+          </picture>
+        </h1>
+      </div>
+    </div>
+    <section class="intro">
+      <div class="intro__inner">
+        <div class="intro__visual js-enter-active"><img src="./images/intro-img1.jpg" loading="lazy" alt="江ノ島">
+          <h2 class="intro__title"> <img src="./images/intro-title1.png" loading="lazy" alt="見所満載の江ノ島を満喫。"></h2>
+          <div class="intro__visual-ac intro__visual-ac--1"> <img src="./images/intro-accent1.png" loading="lazy" alt="アクセント"></div>
+          <div class="intro__visual-ac intro__visual-ac--2"><img src="./images/intro-accent2.png" loading="lazy" alt="アクセント"></div>
+          <div class="intro__visual-ac intro__visual-ac--3"><img src="./images/intro-accent3.png" loading="lazy" alt="アクセント"></div>
+        </div>
+        <div class="intro__row js-enter-active">
+          <div class="intro__lead"> 
+            <picture>
+              <source srcset="./images/intro-lead.png" media="(max-width: 768px)"/><img src="./images/intro-lead.png" alt="レンタカー、電車要らずで 江ノ島まで楽々いける!"/>
+            </picture>
+            <div class="intro__lead-bg"> <img src="./images/intro-lead-bg.svg" loading="lazy" alt="Bg"></div>
+          </div>
+          <p class="intro__desc c-message">
+            那覇に来たら<br>「青い海を見に行きたい」
+            <br>「ウミカジテラステラスに行きたい」
+            <br>「あのSNSでよく見るお土産も買いたい」
+            <br>そんな魅力満載の沖縄を堪能したい方に<br class="sp">ピッタリの乗り物、
+            <br class="pc">電動トゥクトゥク『Emobi』。
+            <br>周りたくなるおすすめスポットを、
+            <br>女子旅やカップル向けなどのシーンに分けて
+            <br>モデルコース形式でご紹介します。
+          </p>
+        </div>
+      </div>
+      <div class="intro__gallery">
+        <div class="c-gallery-wrap">
+          <div class="c-gallery">
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img1.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--1"><img src="./images/gallery1/buddha.png" alt="大仏"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img2.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--2"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img3.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--3"><img src="./images/gallery1/bin.png" alt="びん"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--4"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img4.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--5"><img src="./images/gallery1/ex.png" alt="びっくりマーク"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img5.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--6"><img src="./images/gallery1/car.png" alt="トゥクトゥク"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--7"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img6.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--8"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+          </div>
+          <div class="c-gallery">
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img1.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--1"><img src="./images/gallery1/buddha.png" alt="大仏"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img2.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--2"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img3.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--3"><img src="./images/gallery1/bin.png" alt="びん"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--4"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img4.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--5"><img src="./images/gallery1/ex.png" alt="びっくりマーク"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img5.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--6"><img src="./images/gallery1/car.png" alt="トゥクトゥク"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--7"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img6.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--8"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="model-course" id="model-course" x-data="{modal_selected : null}">
+      <div class="modal-wrapper" :class="{ 'visible': modal_selected }" x-show="modal_selected===1" x-transition:enter.duration.500ms="x-transition:enter.duration.500ms">
+        <div class="modal-close-layer" @click="modal_selected=null"></div>
+        <div class="modal"><a class="modal__close" href="javascript:void(0)" @click="modal_selected=null"><img src="./images/close.svg" loading="lazy" alt="X"/></a>
+          <div class="modal__inner"> 
+            <div class="modal__no"> <img src="./images/model-course/no1.png" loading="lazy" alt="Course 01"/></div>
+            <div class="modal__content">
+              <div class="modal__image"><img src="./images/model-course/model1.jpg" loading="lazy" alt="Course 01"/></div>
+              <div class="modal__body">
+                <h2 class="modal__lead">忘れられない思い出を！<br>二人の距離が縮まる<br class="sp">パーフェクトデートコース</h2>
+                <p class="modal__desc c-text-16">小さなEmobiで2人だけの特別な時間を楽しむならこのコース！<br>駐車場探しの不安もないから徒歩無しで彼女も安心！非日常な時間を2人でゆっくり味わうモデルコースです。</p>
+                <div class="modal__box">
+                  <div class="modal__lists">
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c1.svg" loading="lazy" alt="no1"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">11:00</div>
+                        <div class="modal__list-title">国際通り到着 HIS LeaLeaラウンジへ</div>
+                        <div class="modal__list-desc">Emobiの電動トゥクトゥクをレンタル出来ます。スタッフのレクチャーを受けたら出発！ 
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c2.svg" loading="lazy" alt="no2"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">11:30</div>
+                        <div class="modal__list-title">泊いゆまち</div>
+                        <div class="modal__list-desc">朝7時から空いている人気の市場「泊いゆまち」で海鮮を食べよう！最強コスパ！</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c3.svg" loading="lazy" alt="no3"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">13:00</div>
+                        <div class="modal__list-title">首里城</div>
+                        <div class="modal__list-desc">「伝統と再生の輝き、首里城へ」ランチの後はドライブを楽しもう！首里城までは約10km,30分程！</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c4.svg" loading="lazy" alt="no4"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">14:30</div>
+                        <div class="modal__list-title">ウミカジテラス</div>
+                        <div class="modal__list-desc">大人気なスポット「ウミカジテラス」で沖縄名物を堪能しよう！47店舗あるウミカジテラスで好きなものを見つけよう！</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c5.svg" loading="lazy" alt="no5"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">16:15</div>
+                        <div class="modal__list-title">サンエー</div>
+                        <div class="modal__list-desc">商品ラインナップも豊富でコスパよくお土産を買える沖縄のスーパー。TikTokでも大人気！</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c6.svg" loading="lazy" alt="no6"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">17:00</div>
+                        <div class="modal__list-title">トゥク返却のお時間です</div>
+                        <div class="modal__list-desc">半日一通り観光を楽しんだら車両返却の為に「HIS LeaLeaラウンジ」へ戻ろう。</div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer"> <a class="modal__button" href="javascript:void(0)" @click="modal_selected=null"> <span>CLOSE</span></a></div>
+        </div>
+      </div>
+      <div class="modal-wrapper" :class="{ 'visible': modal_selected }" x-show="modal_selected===2" x-transition:enter.duration.500ms="x-transition:enter.duration.500ms">
+        <div class="modal-close-layer" @click="modal_selected=null"></div>
+        <div class="modal"><a class="modal__close" href="javascript:void(0)" @click="modal_selected=null"><img src="./images/close.svg" loading="lazy" alt="X"/></a>
+          <div class="modal__inner"> 
+            <div class="modal__no"> <img src="./images/model-course/no2.png" loading="lazy" alt="Course 01"/></div>
+            <div class="modal__content">
+              <div class="modal__image"><img src="./images/model-course/model2.jpg" loading="lazy" alt="Course 01"/></div>
+              <div class="modal__body">
+                <h2 class="modal__lead">4時間で沖縄らしさは全て周りたい!!<br>Z世代トレンドコース</h2>
+                <div class="modal__box">
+                  <div class="modal__lists">
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c1.svg" loading="lazy" alt="no1"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">10:30</div>
+                        <div class="modal__list-title">ヒューイットリゾート那覇</div>
+                        <div class="modal__list-desc">Emobiの電動トゥクトゥクをレンタル出来ます。スタッフのレクチャーを受けたら出発（外来利用可能です）</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c2.svg" loading="lazy" alt="no2"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">11:00</div>
+                        <div class="modal__list-title">ステイツサイドタウン<</div>
+                        <div class="modal__list-desc">異国情緒あふれる外人住宅街で、雑貨＆香水ショッピングを満喫！</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c3.svg" loading="lazy" alt="no3"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">12:30</div>
+                        <div class="modal__list-title">キャベッジロッジ</div>
+                        <div class="modal__list-desc">ローカル絶賛！濃厚明太クリームパスタがクセになる隠れ家レストラン。</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c4.svg" loading="lazy" alt="no4"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">13:00</div>
+                        <div class="modal__list-title">A&W 牧港店</div>
+                        <div class="modal__list-desc">レトロ感とビーチビューが絶妙！写真映えスポットでルートビアを。</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c5.svg" loading="lazy" alt="no5"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">14:00</div>
+                        <div class="modal__list-title">ブルーシール本店</div>
+                        <div class="modal__list-desc">沖縄発、季節を問わず楽しめる多彩なアイスの聖地。</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c7.svg" loading="lazy" alt="no6"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">15:00 </div>
+                        <div class="modal__list-title">トゥク返却のお時間です</div>
+                        <div class="modal__list-desc">沖縄が詰まった4時間を過ごした後は「ヒューイットリゾート那覇」に戻ろう。</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer"> <a class="modal__button" href="javascript:void(0)" @click="modal_selected=null"> <span>CLOSE</span></a></div>
+        </div>
+      </div>
+      <div class="modal-wrapper" :class="{ 'visible': modal_selected }" x-show="modal_selected===3" x-transition:enter.duration.500ms="x-transition:enter.duration.500ms">
+        <div class="modal-close-layer" @click="modal_selected=null"></div>
+        <div class="modal"><a class="modal__close" href="javascript:void(0)" @click="modal_selected=null"><img src="./images/close.svg" loading="lazy" alt="X"/></a>
+          <div class="modal__inner"> 
+            <div class="modal__no"> <img src="./images/model-course/no3.png" loading="lazy" alt="Course 01"/></div>
+            <div class="modal__content">
+              <div class="modal__image"><img src="./images/model-course/model3.jpg" loading="lazy" alt="Course 01"/></div>
+              <div class="modal__body">
+                <h2 class="modal__lead">グルメな方必見!!<br>鎌倉のグルメ巡りコース</h2>
+                <div class="modal__box">
+                  <div class="modal__lists">
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c1.svg" loading="lazy" alt="no1"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">10:30 </div>
+                        <div class="modal__list-title">【小町通り】</div>
+                        <div class="modal__list-desc">空いている内に散歩をして食べ歩く事がポイント。<br>お勧めは「ジラフのカレーパン」と「まる天」</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c2.svg" loading="lazy" alt="no2"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">11:30</div>
+                        <div class="modal__list-title">【Emobi鎌倉】</div>
+                        <div class="modal__list-desc">オススメグルメはスタッフに是非聞いてください！</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c3.svg" loading="lazy" alt="no3"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">12:00</div>
+                        <div class="modal__list-title">【海光庵】</div>
+                        <div class="modal__list-desc">長谷寺境内にある絶景カフェ。海を一望出来るテラスがあります。</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c4.svg" loading="lazy" alt="no4"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">13:00</div>
+                        <div class="modal__list-title">【サンライズシャック】</div>
+                        <div class="modal__list-desc">海沿いドライブもかねてアサイーボールの人気店へ。</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c5.svg" loading="lazy" alt="no5"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">13:30</div>
+                        <div class="modal__list-title">【Potatis】</div>
+                        <div class="modal__list-desc">行列が出来る名店！七里ガ浜沿いのポテト人気店へ。</div>
+                      </div>
+                    </div>
+                    <div class="modal__list">
+                      <div class="modal__list-no"><img src="./images/model-course/c6.svg" loading="lazy" alt="no6"/></div>
+                      <div class="modal__list-body">
+                        <div class="modal__list-date">14:30 </div>
+                        <div class="modal__list-title">【帰着】</div>
+                        <div class="modal__list-desc">グルメで満たされた方は海沿いや大仏、ちょこっと観光しつつ帰着。</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal__footer"> <a class="modal__button" href="javascript:void(0)" @click="modal_selected=null"> <span>CLOSE</span></a></div>
+        </div>
+      </div>
+      <div class="model-course__inner">
+        <div class="model-course__visual">
+          <h2 class="c-headline model-course__title">
+            <picture>
+              <source srcset="./images/model-course/title-model-course_sp.png" media="(max-width: 768px)"/><img class="c-headline__img" src="./images/model-course/title-model-course.png" alt="モデル別コース"/>
+            </picture>
+          </h2>
+        </div>
+        <div class="model-course-items">
+          <div class="model-course-item js-enter-active">
+            <div class="model-course-item__image"><img src="./images/model-course/model-course-img1.jpg" loading="lazy" alt="デートコース写真"></div>
+            <div class="model-course-item__body">
+              <div class="model-course-item__no"><img src="./images/model-course/MODEL COUSE.01.svg" loading="lazy" alt="MODEL COUSE.01"></div>
+              <h3 class="model-course-item__title c-title-24">忘れられない思い出を！<br>二人の距離が縮まる<br>パーフェクトデートコース</h3>
+              <p class="model-course-item__desc c-text-16">小さなEmobiで2人だけの特別な時間を楽しむならこのコース！駐車場探しの不安もないから徒歩無しで彼女も安心！非日常な時間を2人でゆっくり味わうモデルコースです。</p><a class="c-button" href="javascript:void(0)" @click="modal_selected=1"> 
+                <div class="c-button__inner"><span>モデルコースをみる</span>
+                  <svg class="c-button__icon">
+                    <use xlink:href="#plus"></use>
+                  </svg>
+                </div></a>
+            </div>
+          </div>
+          <div class="model-course-item model-course-item--2 js-enter-active">
+            <div class="model-course-item__image"><img src="./images/model-course/model-course-img2.jpg" loading="lazy" alt="デートコース写真"></div>
+            <div class="model-course-item__body">
+              <div class="model-course-item__no"><img src="./images/model-course/MODEL COUSE.02.svg" loading="lazy" alt="MODEL COUSE.02"></div>
+              <h3 class="model-course-item__title c-title-24">忘れられない思い出を！<br>二人の距離が縮まる<br>パーフェクトデートコース</h3>
+              <p class="model-course-item__desc c-text-16">小さなEmobiで2人だけの特別な時間を楽しむならこのコース！駐車場探しの不安もないから徒歩無しで彼女も安心！非日常な時間を2人でゆっくり味わうモデルコースです。</p><a class="c-button" href="javascript:void(0)" @click="modal_selected=2"> 
+                <div class="c-button__inner"><span>モデルコースをみる</span>
+                  <svg class="c-button__icon">
+                    <use xlink:href="#plus"></use>
+                  </svg>
+                </div></a>
+            </div>
+          </div>
+          <div class="model-course-item model-course-item--3 js-enter-active">
+            <div class="model-course-item__image"><img src="./images/model-course/model-course-img3.jpg" loading="lazy" alt="デートコース写真"></div>
+            <div class="model-course-item__body">
+              <div class="model-course-item__no"><img src="./images/model-course/MODEL COUSE.03.svg" loading="lazy" alt="MODEL COUSE.03"></div>
+              <h3 class="model-course-item__title c-title-24">忘れられない思い出を！<br>二人の距離が縮まる<br>パーフェクトデートコース</h3>
+              <p class="model-course-item__desc c-text-16">小さなEmobiで2人だけの特別な時間を楽しむならこのコース！駐車場探しの不安もないから徒歩無しで彼女も安心！非日常な時間を2人でゆっくり味わうモデルコースです。</p><a class="c-button" href="javascript:void(0)" @click="modal_selected=3"> 
+                <div class="c-button__inner"><span>モデルコースをみる</span>
+                  <svg class="c-button__icon">
+                    <use xlink:href="#plus"></use>
+                  </svg>
+                </div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="movie js-enter-active" id="movie"><img class="movie__bg" src="./images/movie/movie-bg.png" loading="lazy" alt="Movie Bg">
+      <div class="movie__inner">
+        <div class="movie__body">
+          <h2 class="c-headline movie__title"><img class="c-headline__img" src="./images/movie/title-movie.png" loading="lazy" alt="実際のご利用動画" width="225"></h2>
+          <h3 class="movie__lead">最新！沖縄デートプラン！</h3>
+          <p class="movie__desc c-text-16">最新の観光地をまとめたデートプラン！<br>グルメから景色の良いスポットまで、様々な沖縄本島の魅力をご紹介！</p>
+        </div><a class="movie__image js-enter-active" href="./images/movie/video1.mp4" data-lity><img src="./images/movie/movie-thmbnail.jpg" loading="lazy" alt="Movie Thumbnail">
+          <div class="movie__image-ac movie__image-ac--1"><img src="./images/movie/movie-ac1.png" loading="lazy" alt="アクセント"></div>
+          <div class="movie__image-ac movie__image-ac--2"><img src="./images/movie/movie-ac2.svg" loading="lazy" alt="アクセント"></div>
+          <div class="movie__image-play"><img src="./images/movie/movie-play.png" loading="lazy" alt="Movie Thumbnail"></div>
+          <div class="movie__image-usage"><img src="./images/movie/usage-video.svg" loading="lazy" alt="Usage video"></div></a>
+      </div>
+    </section>
+    <section class="c-cta-section">
+      <div class="c-cta">
+        <div class="c-cta__image1"><img src="./images/cta/cta-img1.jpg" loading="lazy" alt="２台の走るトゥクトゥク"/></div>
+        <div class="c-cta__body">
+          <div class="c-cta__logo"><img src="./images/cta/cta-logo.svg" loading="lazy" alt="ENOSHIMA"/></div>
+          <h2 class="c-cta__title">トゥクトゥクで<br>沖縄観光の思い出を<br class="sp">より充実させよう！</h2><a class="c-button c-cta__button" href="https://www.e-sharedbox.jp/emobi/_2keyresv.php?ro=52" target="_blank"> 
+            <div class="c-button__inner c-cta__button-inner"><span>トゥクトゥクを予約する</span>
+              <svg class="c-button__icon"> 
+                <use xlink:href="#chevron1"></use>
+              </svg>
+            </div></a>
+        </div>
+        <div class="c-cta__image2"><img src="./images/cta/cta-img2.jpg" loading="lazy" alt="トゥクトゥクを運転する人"/></div>
+      </div>
+    </section>
+    <section class="merit" id="merit">
+      <div class="merit__inner"> 
+        <h2 class="c-headline merit__title">
+          <picture>
+            <source srcset="./images/merit/title-merit_sp.png" media="(max-width: 768px)"/><img class="c-headline__img" src="./images/merit/title-merit.png" alt="トゥクトゥクで巡るメリット"/>
+          </picture>
+        </h2>
+        <div class="merit-items">
+          <div class="merit-item js-enter-active">
+            <div class="merit-item__body"><img class="merit-item__no" src="./images/merit/merit-no1.png" loading="lazy" alt="Merit 01" width="80" height="80">
+              <h3 class="merit-item__title c-title-32">旅先での移動の心配がゼロで<br>自由に移動可能</h3>
+              <p class="merit-item__desc c-text-16">電車やバスを待たずに、自由なルートで周遊。<br>「バスがこない」「徒歩が思ったよりも多い」など想定外のトラブルを気にせずにスイスイ観光できます。</p>
+            </div>
+            <div class="merit-item__image"><img src="./images/merit/merit-img1.jpg" loading="lazy" alt="トゥクトゥクの走る写真" width="560" height="374"></div>
+          </div>
+          <div class="merit-item js-enter-active">
+            <div class="merit-item__body"><img class="merit-item__no" src="./images/merit/merit-no2.png" loading="lazy" alt="Merit 02" width="80" height="80">
+              <h3 class="merit-item__title c-title-32">超簡単＆気軽に乗れる<br>3人乗り車両</h3>
+              <p class="merit-item__desc c-text-16">ペーパードライバーでも簡単に操作できる小さな車両なので、慣れない観光地でも安心して周遊できます。<br>普通自動車免許があればどなたでも運転可能です。</p>
+            </div>
+            <div class="merit-item__image"><img src="./images/merit/merit-img2.jpg" loading="lazy" alt="トゥクトゥクの走る写真" width="560" height="374"></div>
+          </div>
+          <div class="merit-item js-enter-active">
+            <div class="merit-item__body"><img class="merit-item__no" src="./images/merit/merit-no3.png" loading="lazy" alt="Merit 03" width="80" height="80">
+              <h3 class="merit-item__title c-title-32">旅のテンションが上がる<br>非日常な移動体験</h3>
+              <p class="merit-item__desc c-text-16">開放的な車両で感じるその土地の風、遮るもののない景色好きな音楽をかけて、スムージーを飲みながら移動する瞬間は、非日常そのものです。</p>
+            </div>
+            <div class="merit-item__image"><img src="./images/merit/merit-img3.jpg" loading="lazy" alt="トゥクトゥクの走る写真" width="560" height="374"></div>
+          </div>
+        </div>
+      </div>
+      <div class="merit__gallery"> 
+        <div class="c-gallery-wrap">
+          <div class="c-gallery">
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img1.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--1"><img src="./images/gallery1/buddha.png" alt="大仏"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img2.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--2"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img3.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--3"><img src="./images/gallery1/bin.png" alt="びん"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--4"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img4.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--5"><img src="./images/gallery1/ex.png" alt="びっくりマーク"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img5.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--6"><img src="./images/gallery1/car.png" alt="トゥクトゥク"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--7"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img6.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--8"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+          </div>
+          <div class="c-gallery">
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img1.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--1"><img src="./images/gallery1/buddha.png" alt="大仏"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img2.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--2"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img3.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--3"><img src="./images/gallery1/bin.png" alt="びん"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--4"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+            <div class="c-gallery__item"> <img src="./images/gallery1/gallery-img4.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--5"><img src="./images/gallery1/ex.png" alt="びっくりマーク"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img5.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--6"><img src="./images/gallery1/car.png" alt="トゥクトゥク"/></div>
+              <div class="c-gallery__item-accent c-gallery__item-accent--7"><img src="./images/gallery1/wave.png" alt="なみ"/></div>
+            </div>
+            <div class="c-gallery__item"><img src="./images/gallery1/gallery-img6.jpg" alt="ギャラリー写真"/>
+              <div class="c-gallery__item-accent c-gallery__item-accent--8"><img src="./images/gallery1/croud.png" alt="くも"/></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="user-voice" id="user-voice">
+      <div class="user-voice__inner"> 
+        <h2 class="c-headline user-voice__title"><img class="c-headline__img" src="./images/user-voice/title-user-voice.png" loading="lazy" alt="お客様の声" width="449"></h2>
+        <div class="user-voice-items">
+          <div class="user-voice-item">
+            <div class="user-voice-item__header">
+              <div class="user-voice-item__headline">
+                <div class="user-voice-item__no"><img src="./images/user-voice/Voice.01.svg" loading="lazy" alt="Voice.1"></div>
+                <h2 class="user-voice-item__title">女子３人で交代しながら<br>楽しく運転しました。</h2>
+              </div>
+              <div class="user-voice-item__image"> <img src="./images/user-voice/voice-img1.jpg" loading="lazy" alt="大阪府在住 / 20代女性"></div>
+            </div>
+            <div class="user-voice-item__body">
+              <p class="user-voice-item__desc c-text-16">インスタグラムで見て楽しそうだったので予約しました。大阪に住んでいるので沖縄は運転したことのない道しかなかったのですが、全く問題なく楽しめました！女子3人で使ってみんなで交代しながら運転しました。</p>
+            </div>
+            <div class="user-voice-item__footer">
+              <div class="user-voice-item__name c-text-14">大阪府在住 / 20代 女性</div>
+            </div>
+          </div>
+          <div class="user-voice-item">
+            <div class="user-voice-item__header">
+              <div class="user-voice-item__headline">
+                <div class="user-voice-item__no"><img src="./images/user-voice/Voice.02.svg" loading="lazy" alt="Voice.2"></div>
+                <h2 class="user-voice-item__title">ペーパードライバーでも<br>安心して運転できました！！</h2>
+              </div>
+              <div class="user-voice-item__image"> <img src="./images/user-voice/voice-img2.jpg" loading="lazy" alt="東京都在住 / 20代 女性"></div>
+            </div>
+            <div class="user-voice-item__body">
+              <p class="user-voice-item__desc c-text-16">最初は運転できるかわからなかったですが、実際に運転してみると自転車のような感覚で運転できました。むしろ自動車よりも小さいのでペーパードライバーにこそおすすめだと思いました。</p>
+            </div>
+            <div class="user-voice-item__footer">
+              <div class="user-voice-item__name c-text-14">東京都在住 / 20代 女性</div>
+            </div>
+          </div>
+          <div class="user-voice-item">
+            <div class="user-voice-item__header">
+              <div class="user-voice-item__headline">
+                <div class="user-voice-item__no"><img src="./images/user-voice/Voice.03.svg" loading="lazy" alt="Voice.3"></div>
+                <h2 class="user-voice-item__title">自転車感覚に近くて、<br>運転がしやすい！</h2>
+              </div>
+              <div class="user-voice-item__image"> <img src="./images/user-voice/voice-img3.jpg" loading="lazy" alt="神奈川県在住 / 20代 男性"></div>
+            </div>
+            <div class="user-voice-item__body">
+              <p class="user-voice-item__desc c-text-16">沖縄本島に観光に来ましたが、波の上ビーチとか海沿いも行けて良かったです。速度も十分出たし、カーブでも安定してました。自転車の感覚に近くて、車よりも運転しやすくて楽しかったです！</p>
+            </div>
+            <div class="user-voice-item__footer">
+              <div class="user-voice-item__name c-text-14">神奈川県在住 / 20代 男性</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="instagram">
+      <div class="instagram__inner">
+        <h2 class="instagram__title"> <img class="instagram__title-ac" src="./images/instagram/title-ac.svg" loading="lazy" alt="インスタで話題！"><span>みんなの</span>
+          <div class="instagram__tags">
+            <div class="instagram__tag">#えもび</div>
+            <div class="instagram__tag">#沖縄</div>
+            <div class="instagram__tag">#トゥクトゥク</div>
+          </div>
+        </h2>
+      </div>
+      <div class="instagram-gallery-list">
+        <div class="instagram-gallery">
+          <div class="instagram-gallery__items">
+            <div class="instagram-gallery__item"><img src="./images/instagram/1.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/2.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/3.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/4.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/5.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/6.png" alt="ギャラリー"></div>
+          </div>
+          <div class="instagram-gallery__items">
+            <div class="instagram-gallery__item"><img src="./images/instagram/1.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/2.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/3.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/4.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/5.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/6.png" alt="ギャラリー"></div>
+          </div>
+        </div>
+        <div class="instagram-gallery">
+          <div class="instagram-gallery__items instagram-gallery__items--reverse">
+            <div class="instagram-gallery__item"><img src="./images/instagram/7.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/8.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/9.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/10.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/11.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/12.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/13.png" alt="ギャラリー"></div>
+          </div>
+          <div class="instagram-gallery__items instagram-gallery__items--reverse">
+            <div class="instagram-gallery__item"><img src="./images/instagram/7.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/8.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/9.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/10.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/11.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/12.png" alt="ギャラリー"></div>
+            <div class="instagram-gallery__item"><img src="./images/instagram/13.png" alt="ギャラリー"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="c-cta-section">
+      <div class="c-cta">
+        <div class="c-cta__image1"><img src="./images/cta/cta-img1.jpg" loading="lazy" alt="２台の走るトゥクトゥク"/></div>
+        <div class="c-cta__body">
+          <div class="c-cta__logo"><img src="./images/cta/cta-logo.svg" loading="lazy" alt="ENOSHIMA"/></div>
+          <h2 class="c-cta__title">トゥクトゥクで<br>沖縄観光の思い出を<br class="sp">より充実させよう！</h2><a class="c-button c-cta__button" href="https://www.e-sharedbox.jp/emobi/_2keyresv.php?ro=52" target="_blank"> 
+            <div class="c-button__inner c-cta__button-inner"><span>トゥクトゥクを予約する</span>
+              <svg class="c-button__icon"> 
+                <use xlink:href="#chevron1"></use>
+              </svg>
+            </div></a>
+        </div>
+        <div class="c-cta__image2"><img src="./images/cta/cta-img2.jpg" loading="lazy" alt="トゥクトゥクを運転する人"/></div>
+      </div>
+    </section>
+    <section class="media" id="media">
+      <div class="media__inner"> 
+        <h2 class="c-headline media__title"><img class="c-headline__img" src="./images/media/title-media.png" loading="lazy" alt="メディア掲載情報" width="223"></h2>
+        <div class="splide js-sp-slider">
+          <div class="splide__track">
+            <div class="splide__list media-items">
+              <div class="splide__slide media-item">
+                <div class="media-item__image"> <img src="./images/media/media1.png" alt="46道府県旅行の旅. / 東海オンエア様"></div>
+                <div class="media-item__body">
+                  <h2 class="media-item__title c-text-16">46道府県旅行の旅. / 東海オンエア様</h2>
+                  <p class="media-item__desc">人気Youtuberの東海オンエアメンバーである、りょうさんとゆめまるさんに<br>ご乗車いただきました。</p>
+                </div>
+              </div>
+              <div class="splide__slide media-item">
+                <div class="media-item__image"> <img src="./images/media/media2.jpg" alt="やってセイカ！ / めざましテレビ様"></div>
+                <div class="media-item__body">
+                  <h2 class="media-item__title c-text-16">やってセイカ！ / めざましテレビ様</h2>
+                  <p class="media-item__desc">ヤッテセイカのコーナーにて、大学生社長がチャレンジする斬新なサービスという内容でご紹介いただきました。</p>
+                </div>
+              </div>
+              <div class="splide__slide media-item">
+                <div class="media-item__image"> <img src="./images/media/media3.jpg" alt="ZIP / 日本テレビ"></div>
+                <div class="media-item__body">
+                  <h2 class="media-item__title c-text-16">ZIP / 日本テレビ</h2>
+                  <p class="media-item__desc">観光客の方が集中する場所での混雑や渋滞対策の新たな取り組みとして取材いただきました。</p>
+                </div>
+              </div>
+              <div class="splide__slide media-item">
+                <div class="media-item__image"> <img src="./images/media/media4.jpg" alt=""></div>
+                <div class="media-item__body">
+                  <h2 class="media-item__title c-text-16">あさイチ / NHK</h2>
+                  <p class="media-item__desc">　春の鎌倉 満喫の旅特集にて、癒しの穴場スポット巡りの移動手段として活用いただきました。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="splide-progress2">
+            <div class="splide-progress2__bar"></div>
+          </div>
+          <div class="splide__arrows"><button class="splide__arrow splide__arrow--prev"></button>
+<button class="splide__arrow splide__arrow--next"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+<section class="hero-slider">
+  <div id="heroSplide" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">お客様の声：予約数が3倍に</li>
+        <li class="splide__slide">SNS経由の新規客が月30組突破</li>
+        <li class="splide__slide">広告効果がROAS600%達成</li>
       </ul>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="fade-in">高速・高品質なリード獲得を実現</h1>
-      <p class="fade-in">マーケティング自動化の新しい常識</p>
-      <a href="#contact" class="cta-btn fade-in">今すぐ始める</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="about" class="section fade-in">
-    <h2>SpeeLeadとは</h2>
-    <p>高速なLP制作と効果測定が一体となった新世代のマーケティングツール。</p>
-  </section>
-
-  <section id="features" class="section features">
-    <div class="feature fade-in">
-      <img src="assets/icon-check.svg" alt="check">
-      <h3>LP制作スピード5倍</h3>
-      <p>誰でも直感的に操作できるUI</p>
+<section class="faq" id="faq"><img class="faq__bg faq__bg--1" src="./images/faq/faq-bg1.svg" loading="lazy" alt="BG"><img class="faq__bg faq__bg--2" src="./images/faq/faq-bg2.jpg" loading="lazy" alt="BG"><img class="faq__bg faq__bg--3" src="./images/faq/faq-bg3.jpg" loading="lazy" alt="BG"><img class="faq__bg faq__bg--4" src="./images/faq/faq-bg4.svg" loading="lazy" alt="BG">
+      <div class="faq__inner">
+        <h2 class="c-headline faq__title"><img class="c-headline__img" src="./images/faq/title-faq.png" loading="lazy" alt="よくあるご質問" width="180"></h2>
+        <div class="faq-items" x-data="{faq1, faq_selected : null}">
+          <template x-for="(item, index) in faq1">
+            <div class="faq-item">
+              <div class="faq-item__title" :class="faq_selected === index ? 'is-active' : '' " @click="faq_selected !== index ? faq_selected = index : faq_selected = null">
+                <span x-html="item.q"></span>
+                <svg><use xlink:href="#chevron-bottom"></use></svg>
+              </div>
+              <div class="faq-item__desc" x-show="faq_selected === index" x-collapse.duration.500ms>
+                <p x-html="item.a"></p>
+              </div>
+            </div>
+          </template>
+          
+        </div>
+      </div>
+    </section>
+    <section class="c-cta-section">
+      <div class="c-cta">
+        <div class="c-cta__image1"><img src="./images/cta/cta-img1.jpg" loading="lazy" alt="２台の走るトゥクトゥク"/></div>
+        <div class="c-cta__body">
+          <div class="c-cta__logo"><img src="./images/cta/cta-logo.svg" loading="lazy" alt="ENOSHIMA"/></div>
+          <h2 class="c-cta__title">トゥクトゥクで<br>沖縄観光の思い出を<br class="sp">より充実させよう！</h2><a class="c-button c-cta__button" href="https://www.e-sharedbox.jp/emobi/_2keyresv.php?ro=52" target="_blank"> 
+            <div class="c-button__inner c-cta__button-inner"><span>トゥクトゥクを予約する</span>
+              <svg class="c-button__icon"> 
+                <use xlink:href="#chevron1"></use>
+              </svg>
+            </div></a>
+        </div>
+        <div class="c-cta__image2"><img src="./images/cta/cta-img2.jpg" loading="lazy" alt="トゥクトゥクを運転する人"/></div>
+      </div>
+    </section>
+    <section class="price" id="price">
+      <div class="price__inner"> 
+        <h2 class="c-headline price__title"><img class="c-headline__img" src="./images/price/title-price.png" loading="lazy" alt="サービス料金" width="180"></h2>
+        <div class="price-items">
+          <div class="price-item">
+            <div class="price-item__inner">
+              <div class="price-item__label">25歳以下の方は、もっと安くなる！</div>
+              <h3 class="price-item__title">通常プラン</h3>
+              <div class="price-item__badge">レンタル時間 : 4時間</div>
+              <p class="price-item__desc">4時間制の通常プランです。<br></p>
+              <div class="price-item__lines">
+                <div class="price-item__line">
+                  <div class="price-item__line-name">4時間プラン</div>
+                  <div class="price-item__line-price">4,000<span>円</span></div>
+                </div>
+                <div class="price-item__line">
+                  <div class="price-item__line-name">6時間プラン</div>
+                  <div class="price-item__line-price">6,000<span>円</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="access" id="access"><img class="access__bg" src="./images/access/access-bg.png" loading="lazy" alt="BG">
+      <div class="access__inner">
+        <div class="access__row">
+          <div class="access__body">
+            <h2 class="c-headline access__title"><img class="c-headline__img" src="./images/access/title-access.png" loading="lazy" alt="アクセス" width="250"></h2>
+            <div class="access__table"> 
+              <dl>
+                <dt>店舗名</dt>
+                <dd>１．えもび那覇　LeaLeaラウンジ店
+                　<br>２．えもび那覇　ヒューイットリゾート那覇店
+                　<br>３．えもび那覇　ノボテル沖縄那覇店
+                </dd>
+              </dl>
+              <dl>
+                <dt>住所</dt>
+                <dd>１．沖縄県那覇市久米2-3-15 COI那覇ビル1F
+                  <br>２．沖縄県那覇市安里２丁目５−１６
+                  <br>３．沖縄県那覇市松川４０
+                </dd>
+              </dl>
+              <dl>
+                <dt>営業時間
+                </dt>
+                <dd>営業所ごとに異なります。
+                  <br>１．9:00～18:00（最終受付14:00）
+                  <br>２．9:00～19:00（最終受付15:00）
+                  <br>３．9:00～20:00（最終受付 14:00）　
+                </dd>
+              </dl>
+              <dl>
+                <dt>TEL</dt>
+                <dd>050-5536-5655</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="access__image"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5192.137521831146!2d127.69253980123092!3d26.218373676740946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e569e71566bdbb%3A0xce2a77786acbd692!2z44OS44Ol44O844Kk44OD44OI44Oq44K-44O844OI6YKj6KaH!5e1!3m2!1sja!2sjp!4v1737019060357!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        </div>
+            <div class="splide-progress">
+              <div class="splide-progress__bar"></div>
+            </div>
+            <div class="splide__arrows"><button class="splide__arrow splide__arrow--prev button prev"></button>
+<button class="splide__arrow splide__arrow--next button next"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="c-cta-section">
+      <div class="c-cta">
+        <div class="c-cta__image1"><img src="./images/cta/cta-img1.jpg" loading="lazy" alt="２台の走るトゥクトゥク"/></div>
+        <div class="c-cta__body">
+          <div class="c-cta__logo"><img src="./images/cta/cta-logo.svg" loading="lazy" alt="ENOSHIMA"/></div>
+          <h2 class="c-cta__title">トゥクトゥクで<br>沖縄観光の思い出を<br class="sp">より充実させよう！</h2><a class="c-button c-cta__button" href="https://www.e-sharedbox.jp/emobi/_2keyresv.php?ro=52" target="_blank"> 
+            <div class="c-button__inner c-cta__button-inner"><span>トゥクトゥクを予約する</span>
+              <svg class="c-button__icon"> 
+                <use xlink:href="#chevron1"></use>
+              </svg>
+            </div></a>
+        </div>
+        <div class="c-cta__image2"><img src="./images/cta/cta-img2.jpg" loading="lazy" alt="トゥクトゥクを運転する人"/></div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__inner u-inner">
+        <div class="footer__row">
+          <div class="footer__logo"><img src="./images/logo-inverse.svg" alt="emobi"></div>
+          <div class="footer__sns">
+            <div class="footer__sns-title">Follow us on</div>
+            <div class="footer__sns-lists"><a class="footer__sns-list" href="https://www.instagram.com/emobi_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="./images/instagram.svg" alt="instagram"></a><a class="footer__sns-list" href="#" target="_blank"><img src="./images/x.svg" alt="x"></a><a class="footer__sns-list" href="https://www.tiktok.com/@emobi_official?_t=8pNLFsjvPbl&_r=1" target="_blank"><img src="./images/ticktok.svg" alt="ticktok"></a></div>
+          </div>
+        </div>
+        <div class="footer__copyright">© 2024 emobi. All rights reserved.</div>
+      </div>
+    </footer><script defer src="//unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+<script defer src="//cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/anchor@3.x.x/dist/cdn.min.js"></script>
+<script defer src="//cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.css" integrity="sha512-NDcw4w5Uk5nra1mdgmYYbghnm2azNRbxeI63fd3Zw72aYzFYdBGgODILLl1tHZezbC8Kep/Ep/civILr5nd1Qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" integrity="sha512-UU0D/t+4/SgJpOeBYkY+lG16MaNF8aqmermRIz8dlmQhOlBnw6iQrnt4Ijty513WB3w+q4JO75IX03lDj6qQNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./js/splide/splide.min.js"></script>
+<script src="./js/script.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+      const faq1 = [{
+          q: "どのような免許があれば運転できますか？",
+          a: "普通自動車免許で運転いただけます。原付免許では運転できません。"
+        },
+        {
+          q: "ペーパードライバーです。運転は簡単ですか？",
+          a: "那覇店では利用者のうち3割が普段運転されない方のご利用です。<br>アクセル操作の無い、自転車やバイクと同様の操作になりますので、<br>運転に不慣れな方でも簡単にご利用頂けます！",
+        },
+        {
+          q: "予約はどのようにすれば良いですか？",
+          a: "予約をするボタンをクリックしてから3ステップ！<br>予約カレンダーへ遷移します。<br>日時を指定後、予約情報を記入、免許証アップロードしたら予約完了となります。<br>予約完了メールに運転方法の動画リンクが送られるので事前にご確認下さい。<br>※電話でのご予約は承っておりません。",
+        },
+        {
+          q: "料金体系はどのようになっていますか？",
+          a: "下記Price表に記載がございます。",
+        },
+        {
+          q: "最高速度はどれくらいですか？",
+          a: "時速45kmのリミッターを設けています。",
+        },
+        {
+          q: "周れる距離はどれくらいですか？",
+          a: "1回のご利用で最大40kmが目安となります。<br>途中充電は不可となります。<br>那覇市内が基本の範囲となります。<br>国際通りからウミカジテラスが約8kmとなり、大体3スポット程度周遊可能です。",
+        },
+      ];
+    </script>
+  </body>
+</html
+<section class="faq" id="faq">
+  <div class="container">
+    <h2>よくあるご質問</h2>
+    <div class="faq-item">
+      <details>
+        <summary>SNSを全く運用していないのですが相談できますか？</summary>
+        <div>はい、アカウントの立ち上げから投稿内容の設計までサポートいたします。</div>
+      </details>
     </div>
-    <div class="feature fade-in">
-      <img src="assets/icon-check.svg" alt="check">
-      <h3>豊富なテンプレート</h3>
-      <p>プロが設計した高CVデザイン</p>
+    <div class="faq-item">
+      <details>
+        <summary>少ない予算でも広告効果は出せますか？</summary>
+        <div>ターゲティングを最適化することで、少額からでも成果につながる施策をご提案します。</div>
+      </details>
     </div>
-    <div class="feature fade-in">
-      <img src="assets/icon-check.svg" alt="check">
-      <h3>多機能な分析</h3>
-      <p>リアルタイムで成果を把握</p>
+    <div class="faq-item">
+      <details>
+        <summary>フォロワーが少なくても集客できますか？</summary>
+        <div>フォロワー数よりも“誰に届いているか”が大切です。狙うターゲット次第で成果は出せます。</div>
+      </details>
     </div>
-  </section>
+    <div class="faq-item">
+      <details>
+        <summary>投稿作成をすべて任せられますか？</summary>
+        <div>はい、写真・文章を含めて丸ごとお任せいただけます。</div>
+      </details>
+    </div>
+  </div>
+</section>
 
-  <section id="contact" class="section contact fade-in">
-    <h2>お問い合わせ</h2>
-    <form>
-      <input type="text" placeholder="お名前">
-      <input type="email" placeholder="メールアドレス">
-      <textarea placeholder="お問い合わせ内容"></textarea>
-      <button type="submit">送信</button>
-    </form>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 SpeeLead Inc. All rights reserved.</p>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
+>
